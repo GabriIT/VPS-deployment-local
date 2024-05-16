@@ -1,0 +1,29 @@
+http {
+    include mime.types;
+
+    upstream backend {
+      server api:8080;
+    }
+
+    upstream frontend {
+      server client:3000;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+          proxy_pass  http://frontend/;
+        }
+
+        location = /api {
+          return 302 /api/;
+        }
+
+        location /api/ {
+          proxy_pass http://backend/;
+        }
+    }
+}
+
+events {}
