@@ -13,7 +13,7 @@ const Form = () => {
         setLoading(true); // Set loading state to true
 
         try {
-            const response = await axios.post('http://localhost:5000/api/multiply', { num1, num2 });
+            const response = await axios.post('/api/multiply', { num1, num2 });
             setResult(response.data.result);
         } catch (error) {
             console.error('Error:', error);
