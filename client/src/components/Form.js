@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Form = () => {
-    const [num1, setNum1] = useState('');
-    const [num2, setNum2] = useState('');
+    const [Q, setQ] = useState('');
+    
     const [result, setResult] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ const Form = () => {
         setLoading(true); // Set loading state to true
 
         try {
-            const response = await axios.post('/api/multiply', { num1, num2 });
+            const response = await axios.post('/api/multiply', {Q});
             setResult(response.data.result);
         } catch (error) {
             console.error('Error:', error);
@@ -25,8 +25,7 @@ const Form = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="number" value={num1} onChange={(e) => setNum1(e.target.value)} />
-                <input type="number" value={num2} onChange={(e) => setNum2(e.target.value)} />
+                <input type="string" value={Q} onChange={(e) => setQ(e.target.value)} />
                 <button type="submit">Multiply</button>
             </form>
             {loading && <p>Loading...</p>} {/* Display loading message if loading state is true */}

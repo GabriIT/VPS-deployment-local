@@ -15,9 +15,9 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 @app.route("/multiply", methods=["POST"])
 def multiply():
     data = request.get_json()
-    num1 = data["num1"]
-    num2 = data["num2"]
-    result = int(num1) * int(num2)  # Perform the multiplication
+    Q = data["Q"]
+   
+    result = Q + "   This is the answer - TEST"  # Perform response to UI
     return jsonify({"result": result})
 
 
