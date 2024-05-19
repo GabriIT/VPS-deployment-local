@@ -17,7 +17,7 @@ def multiply():
     data = request.get_json()
     Q = data["Q"]
    
-    result = Q + "   This is the answer - TEST"  # Perform response to UI
+    result = "  TEST - This is the answer  to the question " + Q  # Perform response to UI
     return jsonify({"result": result})
 
 

@@ -26,9 +26,10 @@ const Form = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="string" value={Q} onChange={(e) => setQ(e.target.value)} />
-                <button type="submit">Multiply</button>
+                <button type="submit">Question</button>
             </form>
             {loading && <p>Loading...</p>} {/* Display loading message if loading state is true */}
+            {Q && <p>Question: {Q}</p>}
             {result && <p>Result: {result}</p>}
         </div>
     );
