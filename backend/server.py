@@ -24,7 +24,7 @@ def multiply():
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
-        port=os.environ.get("PORT", 8080),
+        port=os.environ.get("PORT", 5001),
         debug=os.environ.get("CURRENT_ENVIRONMENT") == "dev",
     )
     # app.run(debug=True)
