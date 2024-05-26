@@ -2,7 +2,7 @@ http {
     include mime.types;
 
     upstream backend {
-      server 222.92.255.34:5000;
+      server 51.79.229.237:5000;
     }
 
     upstream frontend {
