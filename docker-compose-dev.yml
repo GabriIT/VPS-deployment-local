@@ -1,14 +1,5 @@
 version: "3"
 services:   
-  api:
-    image: api-dev:latest
-    build:
-      context: ./backend
-      args:
-        CURRENT_ENVIRONMENT: dev
-        PORT: 8080
-    volumes:
-      - ./backend:/app
   client:
     image: client-dev:latest
     build:
@@ -20,5 +11,5 @@ services:
       context: ./nginx
       dockerfile: Dockerfile.dev
     ports:
-      - "80:80"
+      - "8081:80"
       
